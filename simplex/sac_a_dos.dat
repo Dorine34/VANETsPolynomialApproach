@@ -1,0 +1,43 @@
+data;
+
+#volume maximum du sac-à-dos
+
+param M := 15;
+
+#nombre de blocs
+
+param n := 7;
+
+#taille des blocs
+
+param t := 1 2
+
+                   2 2
+
+                   3 3
+
+                   4 3
+
+                   5 4
+
+                   6 4
+
+                   7 6;
+
+#valeur des blocs
+
+param v := 1 180
+
+                    2 180
+
+                    3 200
+
+                    4 200
+
+                    5 220
+
+                    6 220
+
+                    7 420;
+
+end;
