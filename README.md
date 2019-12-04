@@ -7,11 +7,16 @@ This program chooses a communication technology between 2 available: LTE and WIF
 The simulation consists of two static nodes, each of which can choose between LTE, WIFI and LAA (both at the same time).
 They communicate with Udp protocol.
 
-To operate, the installation is devised in 4 steps:
+To operate, the installation is devised in 5 steps:
+
 1-> installation of the basic structure: ns3-lbt http://code.nsnam.org/laa/ns-3-lbt/
+
 2->modify scenario-helper by replacing it with the proposed one.
+
 3-> add the other files: apact.cpp and the makefile
+
 4-> add the scratch folder and the simplex folder
+
 5->install the glpk with "sudo apt-get install glpk"
 
 
