@@ -1,4 +1,26 @@
 # VANETsPolynomialApproach
+
+What does the algorithm do?
+
+This algorithm makes it possible to elect the set of communication technologies in order to promote throughput. For this purpose, a scenario of two nodes is proposed. Each node has two communication technologies available: WIFI and LTE. The transfer of information is therefore done according to three choices: LTE, Wifi or both at the same time with the LAA. 
+
+The algorithm works as follows:
+
+0-> Initialization with 2 operators A and B exchanging UDP packets.
+
+1-> sending UDP packets according to each communication technology 
+
+2-> classification of data rates according to communication technology.
+
+3->use of the apact algorithm to get an approximate solution:
+
+  3a->local choice of the best communication technology for an operator
+
+  3b->global choice of the best communication technology for all operators
+
+4-> use of simplex to get an exact solution
+
+
 Add at ns3 a polynomial approach in lbt simulation with lte and wifi
 
 
