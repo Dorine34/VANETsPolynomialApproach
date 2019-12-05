@@ -8,7 +8,7 @@
 
 
 using namespace std; 
-
+float EPSILON =0.5;
 
 /*
 ALGO : callThroughputWifi
@@ -199,7 +199,7 @@ max(int a, int b) {
 /*
 ALGO : knapSack
 INPUT : W size of Sack, wt cost, val value of items, n number of items 
-OUTPUT : the best possible items in a sack
+OUTPUT : the best possible items in a sack, LocalSearchAlgorithm
 */
 int
 knapSack(int W, int wt[], float val[], int n) 
@@ -235,6 +235,30 @@ knapSack(int W, int wt[], float val[], int n)
 
 
 /*
+ALGO : electionBeta
+INPUT : vector associated with throughput
+OUTPUT : table of values associated 
+			with the beta approximation of the knapsack
+*/
+void
+electionBeta(vector<double> v1, float* valS )
+{
+	float k=3/EPSILON;
+	float max=0;
+	for (int i=0; i<3;i++)
+	{
+		if(v1.at(i)>max)
+		{
+			max=v1.at(i);
+		}
+	}
+	for (int i=0; i<3;i++)
+	{
+		valS[i]=v1.at(i)*k/max;
+	}
+}
+
+/*
 ALGO : electionKnapSack
 INPUT : values available
 OUTPUT : the index of communication technology chosen
@@ -252,8 +276,10 @@ electionKnapSack(vector<double> v1)
 			val[i/2]=v1[i+1];
 		}
 	}
+	float valS [3] ;
+	electionBeta(v1, valS);
 
-	return knapSack(1,wt,val,3);
+	return knapSack(1,wt,valS,3);
 }
 
 /*
@@ -350,27 +376,29 @@ main()
 	int Bchoice =0;
 
 	//vectors creation
-	vector<double> vWIFI =getVector ();
-	vector<double> vLAA =getVector ();
-	vector<double> vLTE =getVector ();
+
 
 	callThroughputWifi();
+	vector<double> vWIFI =getVector ();
 	resultat(election(vWIFI));
 	clearThroughput();
 
 	callThroughputLAA();
+	vector<double> vLAA =getVector ();
 	resultat(election(vLAA));
 	clearThroughput();
 
 	callThroughputLTE();
+	vector<double> vLTE =getVector ();
 	resultat(election(vLTE));
 	clearThroughput();
 
 	//matrix creation
+	/*
 	double matrix[3][6];//3 lines, 6columns
 	initialiserMatrix(matrix, 3, vWIFI, vLAA, vLTE);
-
-	//LocalSearchAlgorithm
+	*/
+	//SearchAlgorithm
 	cout<<endl;
 
 	for (int i=0; i<3;i++)
