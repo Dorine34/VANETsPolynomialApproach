@@ -1,4 +1,4 @@
-# VANETsPolynomialApproach
+# VANETs Polynomial Approach
 -----------------------------------What does the algorithm do?------------------------------------------------
 
 This algorithm makes it possible to elect the set of communication technologies in order to promote throughput. For this purpose, a scenario of two nodes is proposed. Each node has two communication technologies available: WIFI and LTE. The transfer of information is therefore done according to three choices: LTE, Wifi or both at the same time with the LAA. 
