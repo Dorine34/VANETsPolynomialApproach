@@ -1,8 +1,6 @@
 Minimize                                                            
 
-		f: 3x + 5y - 6z + d                                             
-
-                                                                    
+		f: 3x + 5y - 6z + d                                                                                                          
 
 Subject To                                                          
 
