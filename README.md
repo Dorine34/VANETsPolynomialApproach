@@ -33,7 +33,7 @@ To operate, the installation is devised in 5 steps:
 
 1-> installation of the basic structure: ns3-lbt http://code.nsnam.org/laa/ns-3-lbt/
 
-2->modify scenario-helper by replacing it with the proposed one.
+2-> modify scenario-helper by replacing it with the proposed one.
 
 3-> add the other files: apact.cpp and the makefile
 
